@@ -2,6 +2,13 @@
 /android/
 /ios/
 
+# My personal files 
+
+# The old artistproject.ramaz.org files, so I can recreate the UI
+/reference
+# My TODO list
+/.todo 
+
 # Miscellaneous
 *.class
 *.log
