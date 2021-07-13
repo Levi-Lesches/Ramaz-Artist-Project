@@ -2,10 +2,15 @@
 /android/
 /ios/
 
-# My personal files 
+# Firebase files
+/.firebaserc
+/.firebase/
+
+# My personal files: 
 
 # The old artistproject.ramaz.org files, so I can recreate the UI
 /reference
+/reference - Copy
 # My TODO list
 /.todo 
 
