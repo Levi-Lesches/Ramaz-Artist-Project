@@ -5,3 +5,4 @@ analyzer:
     - test/
   errors:
     include_file_not_found: ignore
+    use_key_in_widget_constructors: ignore
