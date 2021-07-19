@@ -1,5 +1,9 @@
 import "package:flutter/material.dart";
 
-void main() { }
+import "package:artist_project/pages.dart";
 
-// Seasons: List<List<Project>> -- use index as season number
+void main() => runApp(
+	MaterialApp(
+		home: HomePage(),
+	)
+);
