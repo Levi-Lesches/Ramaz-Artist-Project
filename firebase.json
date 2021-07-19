@@ -1,22 +1,29 @@
 {
-  "hosting": {
-    "public": "reference",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "redirects": [
-      {
-        "source": "/index.html",
-        "destination": "/Table of Contents/Table of Contents.html",
-        "type": 301
-      },
-      {
-        "source": "/",
-        "destination": "/Table of Contents/Table of Contents.html",
-        "type": 301
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "reference",
+      "public": "reference",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "redirects": [
+        {
+          "source": "/index.html",
+          "destination": "/Table of Contents/Table of Contents.html",
+          "type": 301
+        },
+        {
+          "source": "/",
+          "destination": "/Table of Contents/Table of Contents.html",
+          "type": 301
+        }
+      ]
+    },
+    {
+      "target": "flutter",
+      "public": "build/web"
+    }
+  ]
 }
