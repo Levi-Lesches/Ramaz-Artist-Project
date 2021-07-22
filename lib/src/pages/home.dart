@@ -19,18 +19,9 @@ class HomePageState extends State<HomePage> {
 		String end
 	) => RichText(text: TextSpan(
 		children: [
-			TextSpan(
-				text: beginning, 
-				style: basic,
-			),
-			TextSpan(
-				text: middle, 
-				style: basic?.copyWith(fontWeight: FontWeight.bold),
-			),
-			TextSpan(
-				text: end, 
-				style: basic,
-			),
+			TextSpan(text: beginning, style: basic),
+			TextSpan(text: middle, style: basic?.copyWith(fontWeight: FontWeight.bold)),
+			TextSpan(text: end, style: basic),
 		]
 	));
 
