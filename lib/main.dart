@@ -4,6 +4,9 @@ import "package:artist_project/pages.dart";
 
 void main() => runApp(
 	MaterialApp(
-		home: HomePage(),
+		home: SplashPage((_) => HomePage()),
+		routes: {
+			Routes.home: (_) => HomePage(),
+		}
 	)
 );
