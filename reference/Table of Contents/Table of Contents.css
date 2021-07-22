@@ -1,0 +1,181 @@
+body {
+	text-align: center;
+	font-family: arial;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+#SidebarLeft {
+	height: 3em;
+	width: 4em;
+	position: fixed;
+	left: 0;
+	top: 22em;
+	opacity: .3;
+}
+#LeftText {
+	position: relative;
+	left: -6em;
+	top: 21em;
+	opacity: 0;
+	z-index: -1;
+}
+#LeftName {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+#LeftDescription {
+	font-size: .9em;
+}
+h4 {
+	margin-top: 5em;
+	font-size: 1.5em;
+}
+h1 {
+	font-size: 3.5em;
+}
+#P1 {
+	margin-top: 0.0625em;
+	margin-bottom: 4em;
+	font-size: 1.2em;
+}
+.border {
+	column-span: all;
+	border-top: 0.0625px solid #D3D3D3;
+	border-bottom: 0.0625px solid #D3D3D3;
+}
+ul {
+	margin-left: auto;
+	margin-right: auto;
+	list-style-type: none;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+li {
+	color: red;
+	font-size: 1.5625em;
+	font-weight: bold;
+	margin-bottom: .50em;
+}
+li >a:link, a:visited, a:active {
+	color: red;
+	text-decoration: none;
+}
+li > a > span:hover {
+	color: black;
+	text-decoration: none;
+}
+p > a:link {
+	text-decoration: none;
+}
+#About {
+	text-align: center;
+	color: black;
+}
+#About:hover {
+	color: red;
+}
+#P2 {
+	margin-top: 1.5em;
+	font-size: .85em;
+}
+.dissapear {
+	display: none;
+}
+.oneColumn {
+	columns: 1;
+}
+.hidden {
+	display: none;
+}
+.picRight {
+	position: relative;
+	left: 12em;
+	bottom: 22em;
+}
+.picLeft {
+	position: relative;
+	right: 12em;
+	bottom: 22em;
+}
+figure {
+	display: inline-block;
+}
+.pic {
+	vertical-align: top;
+	width: 22.6em;
+	height: 17em;
+}
+figcaption {
+	vertical-align: bottom;
+	text-align: center;
+	position: relative;
+}
+#SidebarRight {
+	height: 3em;
+	width: 4em;
+	position: fixed;
+	right: 0;
+	top: 22em;
+	opacity: .3;
+}
+#RightText {
+	position: relative;
+	right: -6em;
+	top: 21em;
+	opacity: 0;
+	z-index: -1;
+}
+#RightName {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+#RightDescription {
+	font-size: .9em;
+}
+
+/* Desktop Code */
+@media screen and (min-width: 1024px) {
+
+	body {
+		overflow: hidden;
+	}
+	ul {
+	    columns: 2;
+	    column-gap: 1.25em;
+	}
+}
+
+/* Mobile Code */
+@media screen and (max-width: 1024px) {
+	#LeftSide {
+		display: none;
+	}
+	#RightSide {
+		display: none;
+	}
+	#About {
+		margin: auto;
+	}
+	.picRight {
+		left: 0em;
+	}
+	.picLeft {
+		right: 0em;
+		bottom: 40em;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	#LeftName {
+		display: none;
+	}
+	#LeftDescription {
+		display: none;
+	}
+	#RightName {
+		display: none;
+	}
+	#RightDescription {
+		display: none;
+	}
+}

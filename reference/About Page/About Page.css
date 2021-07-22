@@ -1,0 +1,277 @@
+body {
+	text-align: center;
+	font-family: arial;
+	font-size: 16px;
+	overflow: auto;
+}
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+.hidden {
+	display: none;
+}
+#TopNav {
+	background-color: gray;
+	height: 5em;
+}
+#BigIcon {
+	width: 7em;
+	height: 4em;
+	margin-top: -.6em;
+	margin-left: 0em;
+}
+#SmallIcon {
+	width: 5em;
+	height: 2.7em;
+	margin-top: -.6em;
+	margin-left: 0em;
+	padding-right: .75em;
+}
+#Page {
+	margin-top: 5em;
+}
+h1 {
+	text-align: center;
+	position: fixed;
+	left: 0;
+	right: 0;
+	font-size: 1.5em;
+	margin-top: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
+	text-decoration: none;
+	color: black;
+}
+.hamDisplayed {
+	background-color: white;
+}
+#ToCPageLink {
+	color: black;
+}
+#ToCPageLink:hover, #ToCPageLink:active, #ToCPageLink:link{
+	color: black;
+	text-decoration: none;
+}
+#MenuButton {
+	position: fixed;
+	top: 7em;
+	left: 3em;
+}
+#Menu {
+	color: black;
+}
+#Menu:active, #Menu:link {
+	color: black;
+	text-decoration: none;
+}
+#Menu:hover {
+	color: red;
+}
+#CloseButton {
+	text-align: left;
+	position: fixed;
+	top: 7em;
+	left: 3em;
+}
+#Close {
+	color: black;
+}
+#Close:active, #Close:link {
+	color: black;
+	text-decoration: none;
+}
+#Close:hover {
+	color: red;
+}
+#Video {
+	position: relative;
+	top: 5em;
+	max-width: 560px;
+	padding-top: 2em;
+	margin: auto;
+}
+#Video iframe {
+}
+#AboutParagraph {
+	position: relative;
+	top: 10em;
+	text-align: justify;
+}
+#Copyright {
+	font-size: .5em;
+}
+#ShareButton {
+	position: fixed;
+	top: 7em;
+	right: 3em;
+}
+#Share {
+	text-decoration: none;
+	color: black;
+	outline: none;
+}
+#Share:hover {
+	color: red;
+}
+#PopoverContent {
+	list-style-type: none;
+}
+#FacebookIcon {
+	width: 2em;
+	margin-bottom: .5em;
+}
+#EmailIcon {
+	width: 2em;
+}
+.a {
+	display: inline;
+	margin-left: 0;
+	padding: 0;
+}
+#MainPage {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background-color: white;
+	position: fixed;
+	top: 10em;
+	border-top: .05em solid gray;
+	columns: 4;
+}
+#MainPage li {
+	display: inline-block;
+}
+.gridImage {
+ 	display: block;
+ 	opacity: .5;
+}
+.picLink:hover, .picLink:active, .picLink:link {
+	text-decoration: none;
+}
+.pic {
+	display:block;
+    max-width: 100%;
+    height: auto;
+    height: 11em;
+    width: 19em;
+    border:none;
+    z-index: 1;
+    margin-bottom: -1.5em;
+    margin-top: .5em;
+}
+.imageCaption {
+	display:block;
+	position: relative;
+	top: .3em;
+	text-align: center;
+	z-index: 2;
+	width: 10em;
+	color: red;
+    box-sizing:border-box;
+    background-color: white;
+    font-weight:bold;
+    font-size: 1em;
+}
+#NameList {
+	list-style: none;
+	position: relative;
+	top: -17em;
+	padding-top: 1em;
+	text-align: center;
+	background-color: white;
+}
+.nameList {
+	font-size: 1.4em;
+	margin-bottom: .6em;
+}
+.nameLink {
+	color: red;
+	text-decoration: none;
+}
+.nameLink:active, .nameLink:link {
+	text-decoration: none;
+	color: red;
+}
+.nameLink:hover {
+	color: black;
+}
+#Hamburger {
+	z-index: 5;
+	position: fixed;
+	right: .2em;
+	top: 3.5em;
+	background-color: white;
+	display: none;
+}
+#Video {
+	position: relative;
+	top: 6em;
+}
+
+/* Desktop Code - runs only on desktops*/
+@media screen and (min-width: 768px) {
+	#BigIcon {
+		visibility: visible;
+	}
+	#SmallIcon {
+		display: none;
+	}
+	#NameList {
+		display: none;
+	}
+}
+
+/*Fixes Image Grid as Viewport shrinks*/
+@media screen and (max-width: 1130px) {
+	#MainPage {
+		columns: 3;
+	}
+	.pic {
+
+		width: 16em;
+		height: 8em;
+		margin-bottom: -1.7em;
+	}
+	.imageCaption {
+		top: .4em;
+	}
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+	#TopNav {
+		background-color: gray !important; 
+		height: 3.7em;
+	}
+	#BigIcon {
+		display: none;
+	}
+	#SmallIcon {
+		visibility: visible;
+	}
+	h1 {
+		text-align: left;
+		position: fixed;
+		top: 3em;
+		font-size: 1em;
+		padding-bottom: 2em;
+		padding-left: 1em;
+		z-index: 2;
+	}
+	#MenuButton {
+		display: none;
+	}
+	#CloseButton {
+		display: none;
+	}
+	#ShareButton {
+		display: none;
+	}
+	#MainPage {
+		display: none;
+	}
+	#Hamburger {
+		display: inline;
+	}
+}
