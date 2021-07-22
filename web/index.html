@@ -40,6 +40,29 @@
       });
     }
   </script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCZAschpjx0B1G6iyeNaD_IBpsgLfoM964",
+      authDomain: "ramaz-artist-project.firebaseapp.com",
+      projectId: "ramaz-artist-project",
+      storageBucket: "ramaz-artist-project.appspot.com",
+      messagingSenderId: "709894532028",
+      appId: "1:709894532028:web:0810fc9e281dd8b249d9b9",
+      measurementId: "G-C4BL6MVCSC"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <!-- Load the Flutter code -->
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
