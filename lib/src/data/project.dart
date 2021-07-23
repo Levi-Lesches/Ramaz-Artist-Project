@@ -6,7 +6,7 @@ class Project {
 	final Student student;
 
 	final int season;
-	final String artist;
+	final String? artist;
 	final String artwork;
 	final String quote;
 	final String videoLink;
