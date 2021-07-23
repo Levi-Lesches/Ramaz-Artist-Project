@@ -7,6 +7,10 @@ void main() => runApp(
 		home: SplashPage((_) => HomePage()),
 		routes: {
 			Routes.home: (_) => HomePage(),
-		}
+		},
+		theme: ThemeData(
+			textTheme: Typography.englishLike2018
+				.apply(bodyColor: Colors.black, displayColor: Colors.black),
+		)
 	)
 );
