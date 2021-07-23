@@ -4,6 +4,8 @@ import "package:provider/provider.dart";
 import "package:artist_project/models.dart";
 import "package:artist_project/data.dart";
 
+import "project.dart";
+
 class HomePage extends StatefulWidget {
 	@override
 	HomePageState createState() => HomePageState();
@@ -92,10 +94,17 @@ class NamesList extends StatelessWidget {
 					for (List<Project> projects in [left, right]) Column(
 						children: [
 							for (final Project project in projects) ...[
-								Text(
-									project.student.name, 
-									style: Theme.of(context).textTheme.headline5
-										?.copyWith(color: Colors.red, fontWeight: FontWeight.bold)
+								InkWell(
+									onTap: () => Navigator.of(context).push(
+										MaterialPageRoute(
+											builder: (_) => ProjectPage(project),
+										)
+									),
+									child: Text(
+										project.student.name, 
+										style: Theme.of(context).textTheme.headline5
+											?.copyWith(color: Colors.red, fontWeight: FontWeight.bold)
+									),
 								),
 								const SizedBox(height: 12),
 							]
