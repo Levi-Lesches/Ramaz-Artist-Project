@@ -1,22 +1,25 @@
+/// A student who participated in the Artist Project.
 class Student {
+	/// This student's name.
 	final String name;
-	final String bio;
-	final String imageLink;
 
+	/// A short description of this student and their work. 
+	final String bio;
+
+	/// Creates a [Student] object from a given name and bio.
 	const Student({
 		required this.name,
 		required this.bio,
-		required this.imageLink,
 	});
 
+	/// Creates a [Student] object from a JSON object.
 	Student.fromJson(Map json) : 
 		name = json ["name"],
-		bio = json ["bio"],
-		imageLink = json ["imageLink"];
+		bio = json ["bio"];
 
+	/// Converts this object to JSON.
 	Map<String, dynamic> toJson() => {
 		"name": name,
 		"bio": bio,
-		"imageLink": imageLink,
 	};
 }
