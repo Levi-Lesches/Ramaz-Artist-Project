@@ -1,9 +1,16 @@
 import "package:flutter/material.dart";
 
+/// The Artist Project's logo.
+/// 
+/// Features the word "Artist" in bold. 
 class ArtistProjectLogo extends StatelessWidget {
+	/// The style used for the text. 
 	final TextStyle? style;
+
+	/// A callback for when the logo is pressed. 
 	final VoidCallback? onTap;
 
+	/// Creates the logo in a given style. 
 	ArtistProjectLogo({
 		TextStyle? style,
 		this.onTap,

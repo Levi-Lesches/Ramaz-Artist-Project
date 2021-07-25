@@ -2,11 +2,21 @@ import "package:flutter/material.dart";
 
 import "package:artist_project/data.dart";
 
+/// A widget that shows information about artwork seen in the project's video.
 class EpisodeArtBox extends StatelessWidget {
+	/// The maximum height for an image. 
 	static double maxHeight = 500;
 
+	/// The artwork shown in the episode. 
 	final List<EpisodeArt> art;
+
+	/// The links to these images. 
 	final List<String> links;
+
+	/// Creates a widget to show information about artwork in the video. 
+	/// 
+	/// Pass a list of [EpisodeArt]s and links to the image files, in the 
+	/// same order.  
 	const EpisodeArtBox(this.art, this.links);
 
 	@override
