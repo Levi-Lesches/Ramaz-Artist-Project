@@ -3,29 +3,25 @@ import "package:provider/provider.dart";
 
 import "package:artist_project/models.dart";
 import "package:artist_project/data.dart";
+import "package:artist_project/widgets.dart";
 
 import "project.dart";
 
+/// The home page. 
+/// 
+/// Shows all the students for all the seasons. Clicking on a name takes the 
+/// user to a [ProjectPage] for that student's project. 
 class HomePage extends StatefulWidget {
 	@override
 	HomePageState createState() => HomePageState();
 }
 
+/// The state for the home page. 
+/// 
+/// Allows the user to view different seasons. 
 class HomePageState extends State<HomePage> {
+	/// The season being shown on-screen.
 	int season = 0;
-
-	Widget middleBold(
-		TextStyle? basic, 
-		String beginning, 
-		String middle, 
-		String end
-	) => RichText(text: TextSpan(
-		children: [
-			TextSpan(text: beginning, style: basic),
-			TextSpan(text: middle, style: basic?.copyWith(fontWeight: FontWeight.bold)),
-			TextSpan(text: end, style: basic),
-		]
-	));
 
 	@override
 	Widget build(BuildContext context) => ChangeNotifierProvider<Projects>.value(
@@ -44,9 +40,8 @@ class HomePageState extends State<HomePage> {
 								style: Theme.of(context).textTheme.headline5,
 							),
 							const SizedBox(height: 8),
-							middleBold(
-								Theme.of(context).textTheme.headline2?.copyWith(color: Colors.black),
-								"THE ", "ARTIST", " PROJECT"
+							ArtistProjectLogo(
+								style: Theme.of(context).textTheme.headline2,
 							),
 							const SizedBox(height: 8),
 							Text(
@@ -64,9 +59,9 @@ class HomePageState extends State<HomePage> {
 							const Divider(),
 							const SizedBox(height: 24),
 
-							middleBold(
-								Theme.of(context).textTheme.subtitle1,
-								"ABOUT THE ", "ARTIST", " PROJECT"
+							ArtistProjectLogo(
+								style: Theme.of(context).textTheme.subtitle1,
+								prefix: "ABOUT ",
 							)
 						]
 					))
@@ -76,8 +71,15 @@ class HomePageState extends State<HomePage> {
 	);
 }
 
+/// A list of all the student's names. 
+/// 
+/// Clicking on a name takes the user to a [ProjectPage] for that student's 
+/// project.
 class NamesList extends StatelessWidget {
+	/// The season being shown.
 	final int season;
+
+	/// Creates a list of names for the given season.
 	const NamesList({required this.season});
 
 	@override

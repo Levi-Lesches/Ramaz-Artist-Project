@@ -6,22 +6,45 @@ import "package:artist_project/pages.dart";
 import "package:artist_project/services.dart";
 import "package:artist_project/widgets.dart";
 
+/// A page to show off a project.
+/// 
+/// Each project has: 
+/// 
+/// - a video
+/// - a quote from the student
+/// - a short section about the student
+/// - a short section about the art seen in the video
 class ProjectPage extends StatefulWidget {
+	/// The project being displayed. 
 	final Project project;
+
+	/// Creates a page to show off a project. 
 	const ProjectPage(this.project);
 
 	@override
 	ProjectPageState createState() => ProjectPageState();
 }
 
+/// The state for a [ProjectPage].
+/// 
+/// Manages loading the images. 
 class ProjectPageState extends State<ProjectPage> {
-	Project get project => widget.project;
+	/// The controller for the YouTube plugin.
 	late final YoutubePlayerController videoController;
 
+	/// Links for all the "As seen in the episode" art pieces. 
 	List<String>? episodeArtLinks;
+
+	/// Links for various images on the page. 
 	String? studentArtLink, ramazLogoLink;
 
-	Future<void> downloadImages() async {
+	/// The project being shown. 
+	/// 
+	/// Refers to [ProjectPage.project] for convenience. 
+	Project get project => widget.project;
+
+	/// Saves the links to the images on the page to the appropriate variables.
+	Future<void> getImages() async {
 		final ProjectFiles files = ProjectFiles(project.student.name);
 		final List<Reference> episodeFiles = await files.episodeArt;
 		ramazLogoLink = await Storage.ramazLogo.getDownloadURL();
@@ -37,7 +60,7 @@ class ProjectPageState extends State<ProjectPage> {
 	@override
 	void initState() {
 		super.initState();
-		downloadImages();
+		getImages();
 		videoController = YoutubePlayerController(
 			initialVideoId: project.videoLink,
 			params: const YoutubePlayerParams(
@@ -55,7 +78,7 @@ class ProjectPageState extends State<ProjectPage> {
 				constraints: const BoxConstraints(maxWidth: 600),
 				// ListView disposes its children. The YouTube player is an HTML plugin
 				// and will reset every time it is scrolled out of view.  
-				// child: SingleChildScrollView(child: Column(  
+				// TODO: Fix this behavior.
 				child: ListView(
 					children: [
 						const SizedBox(height: 24),

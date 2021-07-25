@@ -10,16 +10,20 @@ class ArtistProjectLogo extends StatelessWidget {
 	/// A callback for when the logo is pressed. 
 	final VoidCallback? onTap;
 
+	/// Text to insert before the logo.
+	final String? prefix;
+
 	/// Creates the logo in a given style. 
 	ArtistProjectLogo({
 		TextStyle? style,
 		this.onTap,
+		this.prefix,
 	}) : style = style?.copyWith(color: Colors.black);
 
 	@override
 	Widget build(BuildContext context) => RichText(text: TextSpan(
 		children: [
-			TextSpan(text: "THE ", style: style),
+			TextSpan(text: "${prefix ?? ''}THE ", style: style),
 			TextSpan(
 				text: "ARTIST", 
 				style: style?.copyWith(fontWeight: FontWeight.bold)

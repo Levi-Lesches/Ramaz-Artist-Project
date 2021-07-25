@@ -6,7 +6,7 @@ import "package:artist_project/services.dart";
 
 void main() => runApp(
 	MaterialApp(
-		home: SplashPage((_) async => HomePage()),
+		home: SplashPage(() async => HomePage()),
 		routes: {
 			Routes.home: (_) => HomePage(),
 		},
@@ -24,7 +24,7 @@ void main() => runApp(
 				return MaterialPageRoute(
 					settings: settings,
 					builder: (_) => SplashPage(
-						(_) async {
+						() async {
 							final Project? result = await Services.instance.firestore
 								.getProject(name);
 							return result == null 
