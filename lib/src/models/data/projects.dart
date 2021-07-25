@@ -3,7 +3,11 @@ import "package:artist_project/data.dart";
 
 import "model.dart";
 
+/// The data model for the projects. 
 class Projects extends Model {
+	/// Holds all the projects, sorted by season.
+	/// 
+	/// Each season has its own sublist. So `projects [0]` is season 1.
 	final List<List<Project>> projects = [];
 
 	@override
