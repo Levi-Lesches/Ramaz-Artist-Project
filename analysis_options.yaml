@@ -2,6 +2,11 @@
 # Lint rules to be used for apps without developer facing API. i.e. command line tools and Flutter applications
 ##
 
+analyzer:
+  exclude:
+    - lib/generated_plugin_registrant.dart
+    - test/**
+
 # Rules are in the same order (alphabetically) as documented at http://dart-lang.github.io/linter/lints
 # and https://github.com/dart-lang/linter/blob/master/example/all.yaml
 linter:
