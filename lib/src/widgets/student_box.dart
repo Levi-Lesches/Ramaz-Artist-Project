@@ -10,7 +10,7 @@ class StudentBox extends StatelessWidget {
 	@override
 	Widget build(BuildContext context) => Container(
 		decoration: BoxDecoration(
-			border: Border.all(width: 0.25, color: const Color(0xffd3d3d3))
+			border: Border.all(width: 0.4, color: const Color(0xffd3d3d3))
 		),
 		child: Column(
 			children: [
@@ -18,7 +18,9 @@ class StudentBox extends StatelessWidget {
 					aspectRatio: 1.5,
 					child: imageLink == null ? null : Image.network(imageLink!)
 				),
-				Text(student.bio),
+				const SizedBox(height: 8),		
+				Text(student.bio, style: Theme.of(context).textTheme.bodyText1),
+				const SizedBox(height: 8),		
 			]
 		)
 	);

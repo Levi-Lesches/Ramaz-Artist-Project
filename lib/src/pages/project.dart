@@ -16,7 +16,7 @@ class ProjectPage extends StatefulWidget {
 
 class ProjectPageState extends State<ProjectPage> {
 	Project get project => widget.project;
-	late YoutubePlayerController videoController;
+	late final YoutubePlayerController videoController;
 
 	List<String>? episodeArtLinks;
 	String? studentArtLink, ramazLogoLink;
@@ -53,6 +53,9 @@ class ProjectPageState extends State<ProjectPage> {
 		body: Center(
 			child: ConstrainedBox(
 				constraints: const BoxConstraints(maxWidth: 600),
+				// ListView disposes its children. The YouTube player is an HTML plugin
+				// and will reset every time it is scrolled out of view.  
+				// child: SingleChildScrollView(child: Column(  
 				child: ListView(
 					children: [
 						const SizedBox(height: 24),
@@ -97,15 +100,18 @@ class ProjectPageState extends State<ProjectPage> {
 						const Divider(),
 						const SizedBox(height: 36),
 
-						Text("ABOUT THE ARTIST", style: Theme.of(context).textTheme.headline5),
-						StudentBox(project.student, imageLink: studentArtLink),
+						Text("ABOUT THE ARTIST", style: Theme.of(context).textTheme.subtitle1),
 						const SizedBox(height: 8),
+						StudentBox(project.student, imageLink: studentArtLink),
+						const SizedBox(height: 48),
 
 						Text(
 							"AS SEEN IN THE EPISODE", 
-							style: Theme.of(context).textTheme.headline5
+							style: Theme.of(context).textTheme.subtitle1
 						),
-						EpisodeArtBox(project.episodeArt),
+						const SizedBox(height: 8),
+						if (episodeArtLinks != null)
+							EpisodeArtBox(project.episodeArt, episodeArtLinks!),
 					]
 				)
 			)
