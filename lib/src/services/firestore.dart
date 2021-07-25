@@ -28,4 +28,13 @@ class Firestore extends Service {
 	Future<List<Project>> getSeason(int season) => projects
 		.where("season", isEqualTo: season)
 		.getAll();
+
+	Future<Project?> getProject(String name) async {
+		final Query<Project> query = projects.where("student.name", isEqualTo: name);
+		final QuerySnapshot<Project> snapshot = await query.get();
+		final List<QueryDocumentSnapshot<Project>> documents = snapshot.docs;
+		if (documents.isEmpty) return null;
+		final QueryDocumentSnapshot<Project> result = documents.first;
+		return result.data();
+	}
 }
