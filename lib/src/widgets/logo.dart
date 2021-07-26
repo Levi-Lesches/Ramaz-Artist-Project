@@ -21,14 +21,20 @@ class ArtistProjectLogo extends StatelessWidget {
 	}) : style = style?.copyWith(color: Colors.black);
 
 	@override
-	Widget build(BuildContext context) => RichText(text: TextSpan(
-		children: [
-			TextSpan(text: "${prefix ?? ''}THE ", style: style),
-			TextSpan(
-				text: "ARTIST", 
-				style: style?.copyWith(fontWeight: FontWeight.bold)
-			),
-			TextSpan(text: " PROJECT", style: style),
-		]
-	));
+	Widget build(BuildContext context) => InkWell(
+		onTap: onTap, 
+		child: RichText(
+			textAlign: TextAlign.center,
+			text: TextSpan(
+				children: [
+					TextSpan(text: "${prefix ?? ''}THE ", style: style),
+					TextSpan(
+						text: "ARTIST", 
+						style: style?.copyWith(fontWeight: FontWeight.bold)
+					),
+					TextSpan(text: " PROJECT", style: style),
+				]
+			)
+		)
+	);
 }

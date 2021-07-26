@@ -2,7 +2,6 @@ import "package:flutter/material.dart";
 import "package:youtube_player_iframe/youtube_player_iframe.dart";
 
 import "package:artist_project/data.dart";
-import "package:artist_project/pages.dart";
 import "package:artist_project/services.dart";
 import "package:artist_project/widgets.dart";
 
@@ -30,6 +29,9 @@ class ProjectPage extends StatefulWidget {
 /// Manages loading the images. 
 class ProjectPageState extends State<ProjectPage> {
 	/// The controller for the YouTube plugin.
+	/// 
+	/// Needs to be set using the widget's project field, so it's marked
+	/// `late final` and set properly in [initState].
 	late final YoutubePlayerController videoController;
 
 	/// Links for all the "As seen in the episode" art pieces. 
@@ -61,13 +63,7 @@ class ProjectPageState extends State<ProjectPage> {
 	void initState() {
 		super.initState();
 		getImages();
-		videoController = YoutubePlayerController(
-			initialVideoId: project.videoLink,
-			params: const YoutubePlayerParams(
-				showFullscreenButton: true,
-			),
-		);
-
+		videoController = YoutubePlayerController(initialVideoId: project.videoLink);
 	}
 
 	@override
@@ -82,10 +78,10 @@ class ProjectPageState extends State<ProjectPage> {
 				child: ListView(
 					children: [
 						const SizedBox(height: 24),
-						Center(child: ArtistProjectLogo(
+						ArtistProjectLogo(
 							style: Theme.of(context).textTheme.headline4,
-							onTap: () => Navigator.of(context).pushNamed(Routes.home)
-						)),
+							onTap: () => Navigator.of(context).pop(),
+						),
 
 						const SizedBox(height: 72),
 						YoutubePlayerIFrame(controller: videoController),
