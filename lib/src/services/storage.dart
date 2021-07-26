@@ -1,4 +1,6 @@
 import "package:firebase_storage/firebase_storage.dart";
+import "package:artist_project/data.dart";
+
 import "service.dart";
 
 export "package:firebase_storage/firebase_storage.dart" show Reference;
@@ -8,16 +10,14 @@ export "package:firebase_storage/firebase_storage.dart" show Reference;
 /// To be forwards-compatible with any type of image, this class doesn't use 
 /// image extensions such as `.png` or `.jpg`.
 class ProjectFiles {
-	/// The name of the student.
-	final String name;
-
 	/// The directory this project's files are located in.
 	/// 
 	/// By default, this is the student's name.
 	final Reference dir;
 
 	/// Locates files for a project using the student's name.
-	ProjectFiles(this.name) : dir = Storage.storage.ref(name);
+	ProjectFiles(Project project) : 
+		dir = Storage.storage.ref(project.student.name);
 
 	/// The thumbnail image for this project.
 	Reference get thumbnail => dir.child("thumbnail");

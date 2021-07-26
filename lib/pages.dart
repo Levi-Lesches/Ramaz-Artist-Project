@@ -20,5 +20,6 @@ class Routes {
 	/// The route key for the home page. 
 	static const String home = "home";
 
+	/// The route key for the about page.
 	static const String about = "about";
 }

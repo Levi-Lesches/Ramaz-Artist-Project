@@ -4,8 +4,11 @@ import "package:youtube_player_iframe/youtube_player_iframe.dart";
 import "package:artist_project/pages.dart";
 import "package:artist_project/widgets.dart";
 
+/// The About page. 
 class AboutPage extends StatelessWidget {
+	/// The YouTube ID of the introduction video.
 	static const String aboutVideo = "cseuplXRRRw";
+
 	@override
 	Widget build(BuildContext context) => Scaffold(
 		appBar: Header(ramazLogoLink: null),

@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
 
-import "package:artist_project/data.dart";
 import "package:artist_project/models.dart";
 import "package:artist_project/pages.dart";
 import "package:artist_project/widgets.dart";
@@ -54,7 +53,7 @@ class HomePageState extends State<HomePage> {
 							const Divider(),
 							const SizedBox(height: 16),
 
-							NamesList(season: season),
+							ProjectPicker(season: season),
 
 							const SizedBox(height: 4),
 							const Divider(),
@@ -73,50 +72,3 @@ class HomePageState extends State<HomePage> {
 	);
 }
 
-/// A list of all the student's names. 
-/// 
-/// Clicking on a name takes the user to a [ProjectPage] for that student's 
-/// project.
-class NamesList extends StatelessWidget {
-	/// The season being shown.
-	final int season;
-
-	/// Creates a list of names for the given season.
-	const NamesList({required this.season});
-
-	@override
-	Widget build(BuildContext context) => Consumer(
-		builder: (_, Projects model, __) {
-			final List<Project> seasonProjects = model.projects [season];
-			final int middle = seasonProjects.length ~/ 2;
-			final List<Project> left = seasonProjects.sublist(0, middle);
-			final List<Project> right = seasonProjects.sublist(middle);
-			return Row(
-				mainAxisAlignment: MainAxisAlignment.spaceBetween,
-				children: [
-					const SizedBox(width: 8),
-					for (List<Project> projects in [left, right]) Column(
-						children: [
-							for (final Project project in projects) ...[
-								InkWell(
-									onTap: () => Navigator.of(context).push(
-										MaterialPageRoute(
-											builder: (_) => ProjectPage(project),
-										)
-									),
-									child: Text(
-										project.student.name, 
-										style: Theme.of(context).textTheme.headline5
-											?.copyWith(color: Colors.red, fontWeight: FontWeight.bold)
-									),
-								),
-								const SizedBox(height: 12),
-							]
-						],
-					),
-					const SizedBox(width: 4),
-				],
-			);
-		}
-	);
-}

@@ -47,7 +47,7 @@ class ProjectPageState extends State<ProjectPage> {
 
 	/// Saves the links to the images on the page to the appropriate variables.
 	Future<void> getImages() async {
-		final ProjectFiles files = ProjectFiles(project.student.name);
+		final ProjectFiles files = ProjectFiles(project);
 		final List<Reference> episodeFiles = await files.episodeArt;
 		ramazLogoLink = await Storage.ramazLogo.getDownloadURL();
 		setState(() {});
