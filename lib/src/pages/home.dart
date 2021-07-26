@@ -1,8 +1,9 @@
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
 
-import "package:artist_project/models.dart";
 import "package:artist_project/data.dart";
+import "package:artist_project/models.dart";
+import "package:artist_project/pages.dart";
 import "package:artist_project/widgets.dart";
 
 import "project.dart";
@@ -62,6 +63,7 @@ class HomePageState extends State<HomePage> {
 							ArtistProjectLogo(
 								style: Theme.of(context).textTheme.subtitle1,
 								prefix: "ABOUT ",
+								onTap: () => Navigator.of(context).pushNamed(Routes.about),
 							)
 						]
 					))

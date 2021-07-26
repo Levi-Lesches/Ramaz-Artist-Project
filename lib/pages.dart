@@ -6,6 +6,7 @@
 /// All files are in `lib/src/pages`. 
 library pages;
 
+export "src/pages/about.dart";
 export "src/pages/home.dart";
 export "src/pages/project.dart";
 export "src/pages/splash.dart";
@@ -18,4 +19,6 @@ export "src/pages/splash.dart";
 class Routes {
 	/// The route key for the home page. 
 	static const String home = "home";
+
+	static const String about = "about";
 }

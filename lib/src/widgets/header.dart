@@ -4,7 +4,7 @@ import "package:flutter/material.dart";
 class Header extends AppBar {
 	/// Creates the header. 
 	Header({required String? ramazLogoLink}) : super(
-		backgroundColor: Colors.grey,
+		backgroundColor: const Color(0xff808080),
 		leading: ramazLogoLink == null ? null : Padding(
 			padding: const EdgeInsets.only(left: 5), 
 			child: Image.network(ramazLogoLink)
