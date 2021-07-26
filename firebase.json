@@ -23,7 +23,14 @@
     },
     {
       "target": "flutter",
-      "public": "build/web"
+      "public": "build/web",
+      "redirects": [
+        {
+          "regex": "(?P<path>\/projects\/.+)",
+          "destination": "https://temp-ramaz-artist-project.web.app/#:path",
+          "type": 301
+        }
+      ]
     }
   ]
 }

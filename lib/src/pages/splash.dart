@@ -37,7 +37,7 @@ class SplashPageState extends State<SplashPage> {
 		await Models.instance.init();
 		final Widget result = await widget.nextPage();
 		// ignore: unawaited_futures, this will last the rest of the app
-		Navigator.of(context).push(MaterialPageRoute(
+		Navigator.of(context).pushReplacement(MaterialPageRoute(
 			builder: (_) => result,
 		));
 	}
