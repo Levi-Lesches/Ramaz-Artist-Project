@@ -11,13 +11,13 @@ class ArtistProjectLogo extends StatelessWidget {
 	final VoidCallback? onTap;
 
 	/// Text to insert before the logo.
-	final String? prefix;
+	final String prefix;
 
 	/// Creates the logo in a given style. 
 	ArtistProjectLogo({
 		TextStyle? style,
 		this.onTap,
-		this.prefix,
+		this.prefix = "",
 	}) : style = style?.copyWith(color: Colors.black);
 
 	@override
@@ -27,7 +27,7 @@ class ArtistProjectLogo extends StatelessWidget {
 			textAlign: TextAlign.center,
 			text: TextSpan(
 				children: [
-					TextSpan(text: "${prefix ?? ''}THE ", style: style),
+					TextSpan(text: "${prefix}THE ", style: style),
 					TextSpan(
 						text: "ARTIST", 
 						style: style?.copyWith(fontWeight: FontWeight.bold)
